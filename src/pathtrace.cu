@@ -722,6 +722,7 @@ void denoise(int fs, float c_phi, float n_phi, float p_phi, uchar4 *pbo, int ite
     timer().startGpuTimer();
 
     cudaMemcpy(dev_color, dev_image, pixelcount * sizeof(glm::vec3), cudaMemcpyDeviceToDevice);
+   
     for (int i = 0; i < fs; i++)
     {
         int stepwidth = (1 << i) - 1;
